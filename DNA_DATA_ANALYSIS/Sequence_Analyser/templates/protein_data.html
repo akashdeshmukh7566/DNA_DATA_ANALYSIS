@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% load bootstrap5 %}
+{% block content %}
+
+<link href="{% static 'images/favicon.png' %}" type="image/x-icon" rel="icon">
+<link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <!-- <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet"> -->
+  <!-- <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet"> -->
+
+  <!-- Main CSS File -->
+  <link href="{% static 'css/protein_data.css' %}" rel="stylesheet">
+  
+
+<body class="index-page">
+  <main class="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="{% static 'images/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+
+      <div class="container position-relative">
+        <div class="content row gy-6" style="margin-left: 0px;">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+              <h3>About Protein</h3>
+              <p>
+                Proteins: The Masterpieces of Molecular Artistry. They Build, Repair, and Power Every Function That Makes Life Possible. Protein is the building block of life.
+              </p>
+            </div>
+          </div>
+          <!-- End Why Box -->
+
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="d-flex flex-column justify-content-center">
+              <div class="row gy-4">
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
+                    <i class="bi bi-clipboard-data"></i>
+                    <h4>mRNA LENGTH</h4>
+                    <p>{{mRNA_LENGTH}} Base</p>
+                  </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
+                    <i class="bi bi-gem"></i>
+                    <h4>PROTEIN LENGTH</h4>
+                    <p>{{ PROTEIN_LENGTH }} AA</p>
+                  </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
+                    <i class="bi bi-inboxes"></i>
+                    <h4>TOTAL ATOMS</h4>
+                    <p>{{ TOTAL_ATOM }}</p>
+                  </div>
+                </div><!-- End Icon Box -->
+              
+              </div>
+            </div>
+          </div>
+        </div><!-- End  Content-->
+      </div>
+    </section><!-- /Hero Section -->
+</main>
+
+<!-- Services Section -->
+<section id="services" class="services section light-background">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Advance Information </h2>
+      <p>Molecular Level Information Of Protein</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">  
+          <div class="service-item  position-relative">
+            <div class="icon">
+              <i class="bi bi-activity"></i>
+            </div>
+            <div>
+              <a href="#CHNOS-modal" data-bs-toggle="modal" data-bs-target="#CHNOS" class="stretched-link my-link" >
+                <ul class="aligned-list">
+                    <li><strong>Carbon(C)   </strong>:   {{ Atomic_Percent.0 }} %</li>
+                    <li><strong>Hydrogen(H) </strong>:   {{ Atomic_Percent.1 }} %</li>
+                    <li><strong>Nitrogen(N) </strong>:   {{ Atomic_Percent.2 }} %</li>
+                    <li><strong>Oxygen(O)   </strong>:   {{ Atomic_Percent.3 }} %</li>
+                    <li><strong>Sulfur(S)   </strong>:   {{ Atomic_Percent.4 }} %</li>
+                  </ul>
+                  </a>
+            </div>
+          </div>
+        </div><!-- End Service Item -->
+
+<!-- Modal Window for CHNOS-->
+<div class="modal fade" id="CHNOS" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Details Of CHNOS</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <pre><b class="b_tag">C - </b>-> High Carbon metabolism pathways,Analyze Protein Function(act as enzyme).
+    -> Industrial applications(biofuel production or waste degradation).
+    -> Examine Protein Interactions.
+
+<b class="b_tag">H - </b>-> protein folding,stable structural protin.
+    -> High hydrophobic residues (like alanine, valine, leucine).
+
+<b class="b_tag">N - </b>-> High nitrogen %(use as hormone).
+    -> Help Bioremediation, Antibiotic Development.
+
+<b class="b_tag">O - </b>-> High stability. Help in Production Oxidases, Dehydrogenases or Peroxidases.
+
+<b class="b_tag">S - </b>-> Pathogenicity or antibiotic resistance.
+    -> High sulfur % (use to support structure of protein like- collagen).</pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal" class="css_button">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal Window -->
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item position-relative">
+            <div class="icon">
+              <i class="bi bi-broadcast"></i>
+            </div>
+            <a href="#Protein-Molecular-Weight" data-bs-toggle="modal" data-bs-target="#Protein_MOLECULAR_WEIGHt" class="stretched-link my-link" >
+              <h3>MOLECULAR WEIGHT</h3>
+            <p>{{ MOLECULAR_WEIGHT }} kDa</p>
+            </a>
+          </div>
+        </div><!-- End Service Item -->
+
+<!-- Modal Window for Protein-Molecular-Weight-->
+<div class="modal fade" id="Protein_MOLECULAR_WEIGHt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">About Molecular-Weight </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <pre>-> Antibiotic Development: Analyzing bacterial protein molecular weights to identify<br>   drug targets.
+-> Bioremediation: Identifying high molecular weight proteins that degrade pollutants<br>   for environmental cleanup.</pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal" class="css_button">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal Window -->        
+
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-item position-relative">
+            <div class="icon">
+              <i class="bi bi-easel"></i>
+            </div>
+            <a href="#Protein-Formula" data-bs-toggle="modal" data-bs-target="#Protein_Formula" class="stretched-link my-link" >
+              <h3>Protein Formula</h3>
+             {% if Molecular_Formula %}
+                <!-- <P>{{ Molecular_Formula }}</p> -->
+            <div><strong>C</strong><sub>{{Molecular_Formula.0}}</sub><strong>H</strong><sub>{{Molecular_Formula.1}}</sub><strong>N</strong><sub>{{Molecular_Formula.2}}</sub><strong>O</strong><sub>{{Molecular_Formula.3}}</sub><strong>S</strong><sub>{{Molecular_Formula.4}}</sub></div>
+            {% endif %}
+            </a>
+          </div>
+        </div>
+        <!-- End Service Item -->
+
+<!-- Modal Window for Protein Formula-->
+<div class="modal fade" id="Protein_Formula" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">About Protein Formula</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <pre> • Functional Properties: Identify enzyme activity or antibody binding capabilities.
+ • Mutated Proteins: Compare the molecular formula of mutated vs. wild-type proteins<br>   to detect mutations.</pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal" class="css_button">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal Window -->
+
+</div>
+</div>
+</section>
+
+<!-- Alt Services Section -->
+
+<section id="alt-services" class="alt-services section light-background">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <!-- <div class="row gy-4"> -->
+        <div class="col-lg-9 col-md-12 service-item-container" data-aos="zoom-in" data-aos-delay="200" >
+          <div class="service-item position-relative">
+            <div class="img">
+              <img src="{% static 'images/protein_1.jpg' %}" class="img-fluid responsive-img" alt="dna_seq" >
+            </div>
+            <div class="details">
+                <h3>Protein Sequence</h3>
+                <p class="sequence">{{ Amino_Acid_seq }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+        <!-- End Service Item -->
+
+<!-- BAR Section -->
+<section id="alt-services" class="alt-services section light-background">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-12 col-md-12" data-aos="zoom-in" data-aos-delay="300">
+          <div class="service-item position-relative" style="min-height: 450px;">
+            <div class="details">
+                  <h3>AMINO ACID EXPRESSION</h3>
+                  <div class="bar_image_container">
+                      <ul class="a1">
+                          <li><b>NUMBER OF NEGATIVE CHARGE RESIDUES : </b>{{ negative_count }}</li>
+                          <li><b>NUMBER OF POSITIVE CHARGE RESIDUES : </b>{{ positive_count }}</li>
+                          <li><b>NET CHARGE OF PROTEIN : </b>{{ net_charge }} ph</li>
+                          <li><b>ISO-ELECTRIC POINT : </b>{{ PI }} ph</li>
+                          <li><b>HYDROPATHICITY : </b>{{ gravy_score }}</li>
+                      </ul>
+                      <a href="#Amino-Acid-Expression" data-bs-toggle="modal" data-bs-target="#Amino_Acid_Expression" class="stretched-link my-link" >
+                      <img src="data:image/png;base64,{{ Graph }}" alt="Protein Bar Chart" class="responsive-img"/>
+                    </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Modal Window for Amino Acid Expression-->
+<div class="modal fade" id="Amino_Acid_Expression" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Details Of Amino Acid Expression</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <pre><b class="b_tag">ADENINE(C₅H₅N₅)   -</b>  Fast translation Regulation, growth, and energy production.
+
+<b class="b_tag">URACILE(C₄H₄N₂O₂) -</b>  Gene Regulation(regulatory sequences and riboswitches).
+
+<b class="b_tag">GUANINE(C₅H₅N₅O) -</b>  Regulate translation, mRNA stability and Protein synthesis.
+
+<b class="b_tag">CYTOSINE(C₄H₅N₃O) -</b>  mRNA Stability,gene expression regulation and Protein synthesis.
+
+<b class="b_tag">ADENINE(C₅H₅N₅)   -</b>  Fast translation Regulation, growth, and energy production.
+
+<b class="b_tag">URACILE(C₄H₄N₂O₂) -</b>  Gene Regulation(regulatory sequences and riboswitches).
+
+<b class="b_tag">GUANINE(C₅H₅N₅O) -</b>  Regulate translation, mRNA stability and Protein synthesis.
+
+<b class="b_tag">CYTOSINE(C₄H₅N₃O) -</b>  mRNA Stability,gene expression regulation and Protein synthesis.
+
+<b class="b_tag">ADENINE(C₅H₅N₅)   -</b>  Fast translation Regulation, growth, and energy production.
+
+<b class="b_tag">URACILE(C₄H₄N₂O₂) -</b>  Gene Regulation(regulatory sequences and riboswitches).
+
+<b class="b_tag">GUANINE(C₅H₅N₅O) -</b>  Regulate translation, mRNA stability and Protein synthesis.
+
+<b class="b_tag">CYTOSINE(C₄H₅N₃O) -</b>  mRNA Stability,gene expression regulation and Protein synthesis.
+
+<b class="b_tag">ADENINE(C₅H₅N₅)   -</b>  Fast translation Regulation, growth, and energy production.
+
+<b class="b_tag">URACILE(C₄H₄N₂O₂) -</b>  Gene Regulation(regulatory sequences and riboswitches).
+
+<b class="b_tag">GUANINE(C₅H₅N₅O) -</b>  Regulate translation, mRNA stability and Protein synthesis.
+
+<b class="b_tag">CYTOSINE(C₄H₅N₃O) -</b>  mRNA Stability,gene expression regulation and Protein synthesis.
+</pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal" class="css_button">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal Window -->
+
+  {% endblock %}

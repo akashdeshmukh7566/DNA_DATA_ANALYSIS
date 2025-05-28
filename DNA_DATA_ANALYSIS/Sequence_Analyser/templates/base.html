@@ -1,0 +1,96 @@
+{% load bootstrap %}
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Sequence Analyser</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+
+    <link sizes="16X16" href="{% static 'images/favicon.png' %}" type="image/x-icon" rel="icon" >
+
+    <script src="{% static 'css/sidebar.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <!-- <script>
+        function toggleNav() {
+    var sidebar = document.getElementById("mySidebar");
+    var main = document.getElementById("main");
+    var btn = document.getElementById("toggleBtn");
+
+    if (sidebar.style.width === "251px") {
+        sidebar.style.width = "0";
+        main.style.marginLeft = "0";
+        btn.innerHTML = "☰ Open Sidebar";
+    } else {
+        sidebar.style.width = "251px";
+        main.style.marginLeft = "251px";
+        btn.innerHTML = "☰ Close Sidebar";
+    }
+}
+        </script> -->
+</head>
+<body>
+
+    <!-- {% if show_sidebar %}
+    <div id="mySidebar" class="sidebar">
+        {% if request.resolver_match.url_name == "dna_data" %}
+            <a href="{% url 'upload_file' %}"><i class="fa fa-fw fa-home"></i> Home</a>
+            <a class="active" href="{% url 'dna_data' %}"><img src="{% static 'images\dna.png' %}" alt="DNA_Image" style="width: 24px; height: 24px;"> DNA Analysis</a>
+            <a href="{% url 'mRNA_data' %}"><img src="{% static 'images\mrna.png' %}" alt="DNA_Image" style="width: 24px; height: 24px;">mRNA Analysis</a>
+            <a href="{% url 'protein_data' %}"><img src="{% static 'images\protein.png' %}" alt="Protein_Image" style="width: 24px; height: 24px;">Protein Analysis</a>
+        {% elif request.resolver_match.url_name == "mRNA_data" %}
+            <a href="{% url 'upload_file' %}"><i class="fa fa-fw fa-home"></i> Home</a>
+            <a href="{% url 'dna_data' %}"><img src="{% static 'images\dna.png' %}" alt="DNA_Image" style="width: 24px; height: 24px;">DNA Analysis</a>
+            <a class="active" href="{% url 'mRNA_data' %}"><img src="{% static 'images\mrna.png' %}" alt="mRNA_Image" style="width: 24px; height: 24px;">mRNA Analysis</a>
+            <a href="{% url 'protein_data' %}"><img src="{% static 'images\protein.png' %}" alt="Protein_Image" style="width: 24px; height: 24px;">Protein Analysis</a>
+        {% elif request.resolver_match.url_name == "protein_data" %}
+            <a href="{% url 'upload_file' %}"><i class="fa fa-fw fa-home"></i> Home</a>
+            <a href="{% url 'dna_data' %}"><img src="{% static 'images\dna.png' %}" alt="DNA_Image" style="width: 24px; height: 24px;">DNA Analysis</a>
+            <a href="{% url 'mRNA_data' %}"><img src="{% static 'images\mrna.png' %}" alt="mRNA_Image" style="width: 24px; height: 24px;">mRNA Analysis</a>
+            <a class="active" href="{% url 'protein_data' %}"><img src="{% static 'images\protein.png' %}" alt="Protein_Image" style="width: 24px; height: 24px;">Protein Analysis</a>
+        {% endif %}
+    </div>
+    {% endif %}
+    <div id="main">
+        <div class="content" id="main">
+            <button id="toggleBtn" class="openbtn" onclick="toggleNav()">☰ Open Sidebar</button>
+            
+        </div>
+    </div> -->
+    {% if show_sidebar %}
+        <div class="sidebar">
+            {% if request.resolver_match.url_name == "dna_data" %}
+                <a href="{% url 'upload_file' %}"><i class="fa fa-fw fa-home"></i> Home</a>
+                <a class="active" href="{% url 'dna_data' %}"><img src="{% static 'images\dna.png' %}" alt="DNA_Image" style="width: 24px; height: 24px;"> DNA Analysis</a>
+                <a href="{% url 'mRNA_data' %}"><img src="{% static 'images\mrna.png' %}" alt="DNA_Image" style="width: 24px; height: 24px;">mRNA Analysis</a>
+                <a href="{% url 'protein_data' %}"><img src="{% static 'images\protein.png' %}" alt="Protein_Image" style="width: 24px; height: 24px;">Protein Analysis</a>
+            {% elif request.resolver_match.url_name == "mRNA_data" %}
+                <a href="{% url 'upload_file' %}"><i class="fa fa-fw fa-home"></i> Home</a>
+                <a href="{% url 'dna_data' %}"><img src="{% static 'images\dna.png' %}" alt="DNA_Image" style="width: 24px; height: 24px;">DNA Analysis</a>
+                <a class="active" href="{% url 'mRNA_data' %}"><img src="{% static 'images\mrna.png' %}" alt="mRNA_Image" style="width: 24px; height: 24px;">mRNA Analysis</a>
+                <a href="{% url 'protein_data' %}"><img src="{% static 'images\protein.png' %}" alt="Protein_Image" style="width: 24px; height: 24px;">Protein Analysis</a>
+            {% elif request.resolver_match.url_name == "protein_data" %}
+                <a href="{% url 'upload_file' %}"><i class="fa fa-fw fa-home"></i> Home</a>
+                <a href="{% url 'dna_data' %}"><img src="{% static 'images\dna.png' %}" alt="DNA_Image" style="width: 24px; height: 24px;">DNA Analysis</a>
+                <a href="{% url 'mRNA_data' %}"><img src="{% static 'images\mrna.png' %}" alt="mRNA_Image" style="width: 24px; height: 24px;">mRNA Analysis</a>
+                <a class="active" href="{% url 'protein_data' %}"><img src="{% static 'images\protein.png' %}" alt="Protein_Image" style="width: 24px; height: 24px;">Protein Analysis</a>
+            {% endif %}
+        </div>
+      {% endif %}
+      <!-- Page content -->
+      <div class="content">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+    
+
+</body>
+</html>

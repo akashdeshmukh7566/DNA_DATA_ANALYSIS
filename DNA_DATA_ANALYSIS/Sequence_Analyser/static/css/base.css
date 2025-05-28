@@ -1,0 +1,129 @@
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 251px;
+    background-color:rgba(49, 49, 48, 0.112);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  .sidebar a.active {
+    background-color: #ff5821;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #737576f4;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 251px;
+    height:auto;
+  }
+
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {
+      float: left;
+    }
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+
+  /* .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 251px;
+    background-color: rgba(49, 49, 48, 0.112);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    transition: 0.5s;
+}
+
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background-color: #ff5821;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #737576f4;
+    color: white;
+}
+
+.content {
+    margin-left: 251px;
+    height: auto;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    display: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+#main {
+    transition: margin-left .5s;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 0;
+        height: auto;
+        z-index: 1;
+        position: fixed;
+        overflow-x: hidden;
+    }
+    .sidebar a {
+        float: none;
+    }
+    .content {
+        margin-left: 0;
+    }
+    .openbtn {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+} */

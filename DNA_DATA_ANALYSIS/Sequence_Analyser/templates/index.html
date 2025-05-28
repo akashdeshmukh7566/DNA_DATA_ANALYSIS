@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% load bootstrap5 %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+  <div class="container" style="margin: 8%;">
+    <form role="form" method="POST" enctype="multipart/form-data">
+      <legend>DNA Sequence Analyser</legend>
+      {% csrf_token %}
+
+      <!-- Render the form with Bootstrap5 styling -->
+      {{ form|bootstrap }}
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}

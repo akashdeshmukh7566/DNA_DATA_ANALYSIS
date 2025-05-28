@@ -1,0 +1,301 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% load bootstrap5 %}
+{% block content %}
+
+<link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+<link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <!-- <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet"> -->
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'css/mRNA_data.css' %}" rel="stylesheet">
+
+<body class="index-page">
+  <main class="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="{% static 'images/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+
+      <div class="container position-relative">
+        <div class="content row gy-6" style="margin-left: 0px;">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+              <h3>About mRNA</h3>
+              <p>
+                mRNA is the game-changing messenger that unlocks the secrets of life, fueling medical breakthroughs that could transform our future.
+              </p>
+            </div>
+          </div>
+          <!-- End Why Box -->
+
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="d-flex flex-column justify-content-center">
+              <div class="row gy-4">
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
+                    <i class="bi bi-clipboard-data"></i>
+                    <h4>mRNA LENGTH</h4>
+                    <p>{{mRNA_len}} Base</p>
+                  </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
+                    <i class="bi bi-gem"></i>
+                    <h4>CODON LENGTH</h4>
+                    <p>{{ codon_len }}</p>
+                  </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
+                    <i class="bi bi-inboxes"></i>
+                    <h4>mRNA STABILITY</h4>
+                    <p>{{ mRNA_STABILITY }}</p>
+                  </div>
+                </div><!-- End Icon Box -->
+              
+              </div>
+            </div>
+          </div>
+        </div><!-- End  Content-->
+      </div>
+    </section><!-- /Hero Section -->
+</main>
+
+<!-- Services Section -->
+<section id="services" class="services section light-background">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Advance Information </h2>
+      <p>Molecular Level Information Of mRNA</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">  
+          <div class="service-item  position-relative">
+            <div class="icon">
+              <i class="bi bi-activity"></i>
+            </div>
+            <div>
+              <a href="#AUGC-modal" data-bs-toggle="modal" data-bs-target="#AUGC" class="stretched-link my-link" >
+                <li><strong>A :</strong> {{A1}} %</li>
+                <li><strong>U :</strong> {{U1}} %</li>
+                <li><strong>G :</strong> {{G1}} %</li>
+                <li><strong>C :</strong> {{C1}} %</li>
+                </a>
+            </div>
+          </div>
+        </div><!-- End Service Item -->
+
+<!-- Modal Window for AUGC-->
+<div class="modal fade" id="AUGC" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Details Of AUGC</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <pre><b class="b_tag">ADENINE(C₅H₅N₅)   -</b>  Fast translation Regulation, growth, and energy production.
+
+<b class="b_tag">URACILE(C₄H₄N₂O₂) -</b>  Gene Regulation(regulatory sequences and riboswitches).
+
+<b class="b_tag">GUANINE(C₅H₅N₅O) -</b>  Regulate translation, mRNA stability and Protein synthesis.
+
+<b class="b_tag">CYTOSINE(C₄H₅N₃O) -</b>  mRNA Stability,gene expression regulation and Protein synthesis.</pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal" class="css_button">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal Window -->
+
+        <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item position-relative">
+            <div class="icon">
+              <i class="bi bi-broadcast"></i>
+            </div>
+            <a href="#mRNA-Molecular-Weight" data-bs-toggle="modal" data-bs-target="#mRNA_MOLECULAR_WEIGHt" class="stretched-link my-link" >
+              <h3>MOLECULAR WEIGHT</h3>
+            <p>{{ MOLECULAR_WEIGHT }} kDa</p>
+            </a>
+          </div>
+        </div><!-- End Service Item -->
+
+<!-- Modal Window for mRNA-Molecular-Weight-->
+<div class="modal fade" id="mRNA_MOLECULAR_WEIGHt" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">About Molecular-Weight </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <pre>-> Molecular weight of mRNA Sequence is <font color="red">{{ MOLECULAR_WEIGHT }} kDa</font>.
+-> Ideal molecular weight is 550-1000 kDa. 
+-> If low - Faster Transcription, less stable, small protein encoding.
+-> If high- More Stable, RNA-binding protein interactions, Efficient Translation.</pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal" class="css_button">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal Window -->
+
+<!-- Alt Services Section -->
+
+<section id="alt-services" class="alt-services section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+        <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="service-item position-relative" style="height: 500px;">
+            <div class="img">
+              <img src="{% static 'images/mRNA_1.jpg' %}" class="img-fluid" alt="dna_seq">
+            </div>
+            <div class="details">
+                <h3>mRNA Sequence</h3>
+              <p class="sequence">{{ mRNA_sequence }}</p>
+            </div>
+          </div>
+        </div><!-- End Service Item -->
+
+        <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="300">
+          <div class="service-item position-relative" style="height: 500px;">
+            <div class="img">
+              <img src="{% static 'images/mRNA_2.jpg' %}" class="img-fluid" alt="">
+            </div>
+            <div class="details">
+                <h3>Codon Sequence</h3>
+              <p class="sequence">{{ codon_list }}</p>
+            </div>
+          </div>
+        </div><!-- End Service Item -->
+</div>
+</div>
+</section>
+</div>
+</div>
+</section>
+
+<!-- Bar Section -->
+<section id="alt-services" class="alt-services section light-background">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12" data-aos="zoom-in" data-aos-delay="400">
+          <div class="service-item position-relative" style="height: 575px;">
+            <div class="details">
+              <!-- <a href="#Codon-Expression-modal" data-bs-toggle="modal" data-bs-target="#Codon_Expression" class="stretched-link my-link" > -->
+                <h3>CODON EXPRESSION</h3>
+              <p class="bar_image"><img src="data:image/png;base64,{{ Codon_Expression }}" alt="mRNA Bar Chart" class="responsive-img" /></p>
+              <!-- </a> -->
+            </div>
+          </div>
+      </div>
+    </div>
+</section>
+
+<!-- Modal Window for Codon Expression-->
+<!-- <div class="modal fade" id="Codon_Expression" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Details Of Codon Expression</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <pre>
+<b class="b_tag">AUU,AUC,AUA             -</b>  Code Isoleucine. Energy metabolism, branched-chain
+                             (BCAAs).
+
+<b class="b_tag">AUG                     -</b>  Formyl-methionine(fMet), start codon.
+
+<b class="b_tag">GUU,GUC,GUA,GUG         -</b>  Code Valine ,protein folding, hydrophobic interactions,
+                             stability.
+
+<b class="b_tag">CCU,CCA,CCC,CCG         -</b>  Code Proline, Non-Polar, Protein stability.
+
+<b class="b_tag">ACU,ACC,ACA,ACG         -</b>  Code Threonine, polar, uncharged, Cell Signalling.
+
+<b class="b_tag">GCU,GCC,GCA,GCG         -</b>  Code Alanine, Non Polar, Enzymatic Catalysis.
+
+<b class="b_tag">UAU,UAC                 -</b>  Code Tyrosine, Aromatic, Polar, Signal Transduction,
+                             P-P interaction.
+
+<b class="b_tag">UAA,UAG,UGA             -</b>  Stop Codon.
+
+<b class="b_tag">CAU,CAC                 -</b>  Code Histidine, polar, positively charged ,metabolism
+                             and protein Signalling.
+
+<b class="b_tag">CAA,CAG                 -</b>  Code Glutamine, polar, uncharged, enzymes active side,
+                             P-P Interaction.
+
+<b class="b_tag">AAU,AAC                 -</b>  Code Asparagine, polar, uncharged, hydrogen bonding,
+                             Protein folding.
+
+<b class="b_tag">AAA,AAG                 -</b>  Code Lysine, basic, positively charged, forming Ionic
+                             bonds and Hydrogen bonds.
+
+<b class="b_tag">GAU,GAC                 -</b>  Code Aspartic Acid, polar, negatively charged, contains
+                             a(-COOH) group, Forming Ionic bonds and Hydrogen bonds.
+
+<b class="b_tag">GAA,GAG                 -</b>  Code Glutamic, polar, negatively charged,-COOH group,
+                             ionic interactions, P-P interaction, Enzyme Catalyst.
+
+<b class="b_tag">UGC, UGU                -</b>  Code Cysteine, polar, uncharged, thiol group
+                             (-SH)(Sulfur-containing),Enzyme Activity.
+
+<b class="b_tag">UGG                     -</b>  Code Tryptophan, aromatic, Non-Polar, hydrophobic,
+                             Protein folding and Stability.
+
+<b class="b_tag">CGU,CGC,CGA,CGG,AGA     -</b>  Code Arginine ,basic, positively charged, Enzyme
+                             activity, and Regulation, Hydrogen Bonding and
+                             Ionic Interactions.
+
+<b class="b_tag">GGU, GGC, GGA, GGG      -</b>  GGU, GGC, GGA, GGG - Code Glycine, non-polar, formation
+                             protein secondary structures, Collagen synthesis.
+
+<b class="b_tag">UCU,UCA,UCC,UCG,AGU,AGC -</b>  Code Serine, enzyme catalysis, signal transduction,
+                             P-P interaction.
+
+<b class="b_tag">UUA,UUG,CUU,CUC,CUA,CUG -</b> code Leucine(non-polar, Hydrophobic).
+                             protein folding & function.
+                             P-P interactions.
+                             
+<b class="b_tag">UUU,UUC                 -</b> Code Phenylalanine(Aromatic),impact translation
+                             efficiency.
+                             Use in enzymes, receptors structure.
+                             Interact with hydrophobic compound.
+</pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal" class="css_button">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- End Modal Window -->
+
+  {% endblock %}
