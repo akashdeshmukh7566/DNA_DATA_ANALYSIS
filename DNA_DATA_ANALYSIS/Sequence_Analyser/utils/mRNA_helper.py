@@ -111,3 +111,7 @@ def codon_bar_chart(codon_list):
     img.seek(0)
     img_base64 = base64.b64encode(img.getvalue()).decode('utf-8')
     return img_base64
+
+
+
+#try
